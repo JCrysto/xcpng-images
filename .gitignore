@@ -1,0 +1,9 @@
+# Jamais d'ISO dans git : 648 Mio, et GitHub refuse au-dela de 100 Mio.
+# Les images vivent dans les Releases, avec leur empreinte.
+*.iso
+*.iso.sha256
+layout/
+patched/
+check/
+esp.img
+*.log

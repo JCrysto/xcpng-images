@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+  Exemple de format, sans aucune valeur reelle. L'answerfile d'une installation
+  n'est jamais dans ce depot : il porte le hash du mot de passe root et des
+  details du materiel. En essai il est servi hors depot ; en production, par la
+  plateforme, a l'adresse IP du serveur, pendant la fenetre d'installation.
+-->
+<installation mode="fresh" srtype="ext">
+  <!-- Nom Linux du disque cible : sda, nvme0n1… a relever sur le materiel reel. -->
+  <primary-disk>__DISQUE__</primary-disk>
+  <keymap>us</keymap>
+  <!-- SHA-512 crypt ($6$...), jamais le mot de passe en clair. -->
+  <root-password type="hash">__HASH__</root-password>
+  <!-- ISO complete : les paquets viennent du media, aucun miroir. -->
+  <source type="local"/>
+  <!-- Designer la carte publique par sa MAC : l'ordre eth0/eth1 n'est pas garanti. -->
+  <admin-interface hwaddr="__MAC_PUBLIQUE__" proto="dhcp"/>
+  <timezone>__FUSEAU__</timezone>
+  <ntp-server>ntp.ovh.net</ntp-server>
+</installation>
